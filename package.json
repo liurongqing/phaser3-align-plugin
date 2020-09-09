@@ -1,0 +1,12 @@
+{
+  "name": "phaser3-align-plugin",
+  "version": "1.0.2",
+  "main": "./dist/index.js",
+  "types": "./types/IAlignPlugin.d.ts",
+  "repository": "git@github.com:liurongqing/phaser3-align-plugin.git",
+  "author": "liurongqing <phpgege@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.0.2"
+  }
+}
