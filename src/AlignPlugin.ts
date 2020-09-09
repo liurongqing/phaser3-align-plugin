@@ -1,4 +1,4 @@
-export default class AlignPlugin extends Phaser.Plugins.ScenePlugin {
+export class AlignPlugin extends Phaser.Plugins.ScenePlugin {
   private rows: number
   private cols: number
   private color: any

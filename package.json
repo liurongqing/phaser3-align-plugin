@@ -1,6 +1,6 @@
 {
   "name": "phaser3-align-plugin",
-  "version": "1.0.2",
+  "version": "1.0.6",
   "main": "./dist/index.js",
   "types": "./types/IAlignPlugin.d.ts",
   "repository": "git@github.com:liurongqing/phaser3-align-plugin.git",
