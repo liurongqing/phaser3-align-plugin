@@ -1,8 +1,7 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "module": "UMD",
-        "declaration": true,
+        "module": "ES6",
         "outDir": "./dist",
         "strict": true
     }

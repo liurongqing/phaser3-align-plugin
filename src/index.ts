@@ -1,1 +1,1 @@
-export { AlignPlugin } from './AlignPlugin'
+export { default as AlignPlugin } from './AlignPlugin'
