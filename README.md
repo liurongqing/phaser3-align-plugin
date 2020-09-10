@@ -33,6 +33,6 @@ yarn add phaser3-align-plugin
     this.align.grid({rows: 7, cols: 7, debug: true, color: 0xff0000})
 
     // position
-    this.align.placeAt(row, col, sprite)
-    this.align.placeAtIndex(index, sprite)
+    this.align.placeAt(sprite, row, col)
+    this.align.placeAtIndex(sprite, index)
     ```
