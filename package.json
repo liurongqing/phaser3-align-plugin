@@ -6,8 +6,7 @@
   "types": "./types/IAlignPlugin.d.ts",
   "repository": "git@github.com:liurongqing/phaser3-align-plugin.git",
   "author": "liurongqing <phpgege@gmail.com>",
-  "license": "MIT",
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
+  "license": "MIT",  
   "devDependencies": {
     "typescript": "^4.0.2"
   }
