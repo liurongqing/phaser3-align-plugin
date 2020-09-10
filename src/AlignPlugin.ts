@@ -34,16 +34,16 @@ export class AlignPlugin extends Phaser.Plugins.ScenePlugin {
     obj.scaleX = obj.scaleY
   }
 
-  placeAt(row: number, col: number, obj: Phaser.GameObjects.Image | Phaser.GameObjects.Sprite | Phaser.GameObjects.Text, origin = [0.5, 0.5]) {
+  placeAt(obj: Phaser.GameObjects.Image | Phaser.GameObjects.Sprite | Phaser.GameObjects.Text, row: number, col: number, origin = [0.5, 0.5]) {
     const x = this.cellWidth * col + this.cellWidth * origin[0]
     const y = this.cellHeight * row + this.cellHeight * origin[1]
     obj.setPosition(x, y)
   }
 
-  placeAtIndex(index: number, obj: Phaser.GameObjects.Image | Phaser.GameObjects.Sprite | Phaser.GameObjects.Text, origin = [0.5, 0.5]) {
+  placeAtIndex(obj: Phaser.GameObjects.Image | Phaser.GameObjects.Sprite | Phaser.GameObjects.Text, index: number, origin = [0.5, 0.5]) {
     const row = Math.floor(index / this.cols)
     const col = index - (row * this.cols)
-    this.placeAt(row, col, obj, origin)
+    this.placeAt(obj, row, col, origin)
   }
 
   grid({ rows = 5, cols = 5, color = 0xff0000, debug = true }) {

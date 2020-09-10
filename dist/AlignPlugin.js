@@ -34,17 +34,17 @@ var AlignPlugin = /** @class */ (function (_super) {
         obj.displayHeight = height * scale;
         obj.scaleX = obj.scaleY;
     };
-    AlignPlugin.prototype.placeAt = function (row, col, obj, origin) {
+    AlignPlugin.prototype.placeAt = function (obj, row, col, origin) {
         if (origin === void 0) { origin = [0.5, 0.5]; }
         var x = this.cellWidth * col + this.cellWidth * origin[0];
         var y = this.cellHeight * row + this.cellHeight * origin[1];
         obj.setPosition(x, y);
     };
-    AlignPlugin.prototype.placeAtIndex = function (index, obj, origin) {
+    AlignPlugin.prototype.placeAtIndex = function (obj, index, origin) {
         if (origin === void 0) { origin = [0.5, 0.5]; }
         var row = Math.floor(index / this.cols);
         var col = index - (row * this.cols);
-        this.placeAt(row, col, obj, origin);
+        this.placeAt(obj, row, col, origin);
     };
     AlignPlugin.prototype.grid = function (_a) {
         var _b = _a.rows, rows = _b === void 0 ? 5 : _b, _c = _a.cols, cols = _c === void 0 ? 5 : _c, _d = _a.color, color = _d === void 0 ? 0xff0000 : _d, _e = _a.debug, debug = _e === void 0 ? true : _e;
