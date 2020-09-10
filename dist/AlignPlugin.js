@@ -64,7 +64,7 @@ var AlignPlugin = /** @class */ (function (_super) {
             for (var j = 0; j < this.cols; j++) {
                 var numText = this.scene.add.text(0, 0, String(count), { color: this.color.rgba });
                 numText.setOrigin(0.5).setDepth(this.depth);
-                this.placeAtIndex(count, numText);
+                this.placeAtIndex(numText, count);
                 count++;
             }
         }

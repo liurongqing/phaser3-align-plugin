@@ -34,13 +34,13 @@ export class AlignPlugin extends Phaser.Plugins.ScenePlugin {
     obj.scaleX = obj.scaleY
   }
 
-  placeAt(obj: Phaser.GameObjects.Image | Phaser.GameObjects.Sprite | Phaser.GameObjects.Text, row: number, col: number, origin = [0.5, 0.5]) {
+  placeAt(obj: any, row: number, col: number, origin = [0.5, 0.5]) {
     const x = this.cellWidth * col + this.cellWidth * origin[0]
     const y = this.cellHeight * row + this.cellHeight * origin[1]
     obj.setPosition(x, y)
   }
 
-  placeAtIndex(obj: Phaser.GameObjects.Image | Phaser.GameObjects.Sprite | Phaser.GameObjects.Text, index: number, origin = [0.5, 0.5]) {
+  placeAtIndex(obj: any, index: number, origin = [0.5, 0.5]) {
     const row = Math.floor(index / this.cols)
     const col = index - (row * this.cols)
     this.placeAt(obj, row, col, origin)
@@ -63,7 +63,7 @@ export class AlignPlugin extends Phaser.Plugins.ScenePlugin {
       for (let j = 0; j < this.cols; j++) {
         let numText = this.scene.add.text(0, 0, String(count), { color: this.color.rgba })
         numText.setOrigin(0.5).setDepth(this.depth)
-        this.placeAtIndex(count, numText)
+        this.placeAtIndex(numText, count)
         count++
       }
     }
