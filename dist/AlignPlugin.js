@@ -15,37 +15,37 @@ var AlignPlugin = /** @class */ (function (_super) {
         _this.depth = 9999;
         return _this;
     }
-    // 完全适配
     AlignPlugin.prototype.envelop = function (obj, scale) {
-        this[window.envelop](obj, scale);
+        var _a = this.scene.scale, width = _a.width, height = _a.height;
+        var windowRadio = width / height;
+        var mode = 'vw';
+        if (window.designRatio && windowRadio < window.designRatio) {
+            mode = 'vh';
+        }
+        this[mode](obj, scale);
     };
-    // 缩放宽度，高度自适应
     AlignPlugin.prototype.vw = function (obj, scale) {
         var width = this.scene.scale.width;
         obj.displayWidth = width * scale;
         obj.scaleY = obj.scaleX;
     };
-    // 缩放高度， 宽度自适应
     AlignPlugin.prototype.vh = function (obj, scale) {
         var height = this.scene.scale.height;
         obj.displayHeight = height * scale;
         obj.scaleX = obj.scaleY;
     };
-    // 按行列放置
     AlignPlugin.prototype.placeAt = function (row, col, obj, origin) {
         if (origin === void 0) { origin = [0.5, 0.5]; }
         var x = this.cellWidth * col + this.cellWidth * origin[0];
         var y = this.cellHeight * row + this.cellHeight * origin[1];
         obj.setPosition(x, y);
     };
-    // 按索引放置
     AlignPlugin.prototype.placeAtIndex = function (index, obj, origin) {
         if (origin === void 0) { origin = [0.5, 0.5]; }
         var row = Math.floor(index / this.cols);
         var col = index - (row * this.cols);
         this.placeAt(row, col, obj, origin);
     };
-    // 开启网格布局
     AlignPlugin.prototype.grid = function (_a) {
         var _b = _a.rows, rows = _b === void 0 ? 5 : _b, _c = _a.cols, cols = _c === void 0 ? 5 : _c, _d = _a.color, color = _d === void 0 ? 0xff0000 : _d, _e = _a.debug, debug = _e === void 0 ? true : _e;
         var _f = this.scene.scale, width = _f.width, height = _f.height;
@@ -57,7 +57,6 @@ var AlignPlugin = /** @class */ (function (_super) {
         if (debug)
             this.debug();
     };
-    // 开启 debug 线
     AlignPlugin.prototype.debug = function () {
         this.drawLine();
         var count = 0;
@@ -70,7 +69,6 @@ var AlignPlugin = /** @class */ (function (_super) {
             }
         }
     };
-    // 画线
     AlignPlugin.prototype.drawLine = function () {
         var _a = this.scene.scale, width = _a.width, height = _a.height;
         this.graphics = this.scene.add.graphics();
@@ -88,4 +86,4 @@ var AlignPlugin = /** @class */ (function (_super) {
     };
     return AlignPlugin;
 }(Phaser.Plugins.ScenePlugin));
-export default AlignPlugin;
+export { AlignPlugin };
