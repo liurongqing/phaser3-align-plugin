@@ -1,12 +1,12 @@
-# install
+# Installation
 
 ```bash
 yarn add phaser3-align-plugin
 ```
 
-# use
+# Usage
 
-1. configuration
+1. Import the plugin
     ```typescript
     import { AlignPlugin } from 'phaser3-align-plugin'
     const config = {
@@ -22,7 +22,7 @@ yarn add phaser3-align-plugin
     }
     ```
 
-1. use
+1. Use it
     ```typescript
     // Scale
     this.align.envelop(sprite, 1)
